@@ -1,0 +1,11 @@
+
+{% block content %}
+    <h1>Edit Client</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'client_list' %}">Back to Clients</a>
+    <a href="{% url 'delete_client' client.id %}">Delete Client</a>
+{% endblock %}

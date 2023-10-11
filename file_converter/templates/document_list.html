@@ -1,0 +1,13 @@
+
+{% block content %}
+    <h1>Document Management Dashboard</h1>
+    <h2>Uploaded Documents</h2>
+    <ul>
+        {% for document in documents %}
+            <li><a href="{% url 'document_detail' document.id %}">{{ document.uploaded_file.name }}</a></li>
+        {% empty %}
+            <li>No documents available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'upload_pdf' %}">Upload a Document</a>
+{% endblock %}

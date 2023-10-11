@@ -1,0 +1,9 @@
+
+{% block content %}
+    <h1>Document Details</h1>
+    <p><strong>Document Name:</strong> {{ document.uploaded_file.name }}</p>
+    <p><strong>Client:</strong> {{ document.client.name }}</p>
+    <p><strong>Funding Program:</strong> {{ document.funding_program.program_name }}</p>
+    <p><strong>Uploaded At:</strong> {{ document.uploaded_at }}</p>
+    <a href="{% url 'document_list' %}">Back to Document List</a>
+{% endblock %}

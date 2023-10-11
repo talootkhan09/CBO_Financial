@@ -1,0 +1,12 @@
+
+{% block content %}
+    <h1>Clients</h1>
+    <ul>
+        {% for client in clients %}
+            <li><a href="{% url 'edit_client' client.id %}">{{ client.name }}</a></li>
+        {% empty %}
+            <li>No clients available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_client' %}">Add a new client</a>
+{% endblock %}

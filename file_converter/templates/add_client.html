@@ -1,0 +1,10 @@
+
+{% block content %}
+    <h1>Add Client</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'client_list' %}">Back to Clients</a>
+{% endblock %}
